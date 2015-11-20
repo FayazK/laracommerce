@@ -41,5 +41,8 @@
                 <div class="title">Laravel 5</div>
             </div>
         </div>
+        <?php
+            echo asset('resources/assets/json.css');
+        ?>
     </body>
 </html>
