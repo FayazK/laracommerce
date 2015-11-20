@@ -21,6 +21,9 @@ Route::get('/home', function () {
 // The back-end area
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth','auth.admin']], function () {
     Route::get('/','AdminController@index');
+    Route::get('/users','UsersController@index');
+    Route::get('/users/edit/{id}','UsersController@edit');
+    Route::get('/users/delete/{id}','UsersController@delete');
 });
 
 // Authentication routes...
