@@ -19,7 +19,7 @@ Route::get('/home', function () {
 });
 
 // The back-end area
-Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth','auth.admin']], function () {
+Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth','role:admin']], function () {
     Route::get('/','AdminController@index');
     Route::get('/home','AdminController@index');
     Route::get('/users','UsersController@index');

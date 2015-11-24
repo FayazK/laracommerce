@@ -60,11 +60,18 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        // Create user
+        $user =  User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+        // Get the user role
+        $roleId = \App\Role::where('name','user')->get(['id']);
+        // Attach role to the user
+        $user->attachRole(['id' => $roleId[0]->id]);
+        // Return user instance
+        return $user;
     }
 }

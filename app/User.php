@@ -14,7 +14,9 @@ class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract
 {
-    use Authenticatable, Authorizable, CanResetPassword;
+    use Authenticatable,Authorizable, CanResetPassword, \Zizaco\Entrust\Traits\EntrustUserTrait{
+        \Zizaco\Entrust\Traits\EntrustUserTrait::can insteadof Authorizable;
+    }
 
     /**
      * The database table used by the model.
