@@ -22,6 +22,8 @@ Route::get('/home', function () {
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth','role:admin']], function () {
     Route::get('/','AdminController@index');
     Route::get('/home','AdminController@index');
+    Route::post('settings/save','AdminController@save');
+    Route::get('/settings/{type?}','AdminController@settings');
     Route::get('/users','UsersController@index');
     Route::get('/users/edit/{id}','UsersController@edit');
     Route::get('/users/delete/{id}','UsersController@delete');

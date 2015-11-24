@@ -16,6 +16,7 @@ class CreateSettings extends Migration
             $table->increments('id');
             $table->string('name',200)->unique();
             $table->text('value');
+            $table->enum('site',['yes','no'])->default('no');
             $table->timestamps();
         });
     }

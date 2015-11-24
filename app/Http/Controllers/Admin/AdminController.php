@@ -16,6 +16,20 @@ class AdminController extends Controller {
     public function index() {
         return view('admin');
     }
+    
+    public function settings(){
+        return view('admin.settings');
+    }
+    
+    public function save(Request $request){
+        $data = $request->all();
+        unset($data['_token']);
+        foreach($data as $key => $value){
+            set_settings($key, $value);
+        }
+        flash()->success('Settings saved');
+        return redirect('admin/settings');
+    }
 
     /**
      * Show the form for creating a new resource.

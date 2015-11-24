@@ -9,7 +9,9 @@
         "laravel/framework": "5.1.*",
         "patricktalmadge/bootstrapper": "~5",
         "zizaco/entrust": "dev-laravel-5",
-        "barryvdh/laravel-ide-helper": "^2.1"
+        "barryvdh/laravel-ide-helper": "^2.1",
+        "laracasts/flash": "^1.3",
+        "doctrine/dbal": "^2.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -71,7 +71,7 @@ return [
     |--------------------------------------------------------------------------
     | Encryption Key
     |--------------------------------------------------------------------------
-    |
+    |    'Laracasts\Flash\FlashServiceProvider'
     | This key is used by the Illuminate encrypter service and should be set
     | to a random, 32 character string, otherwise these encrypted strings
     | will not be safe. Please do this before deploying an application!
@@ -146,6 +146,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         'Zizaco\Entrust\EntrustServiceProvider',
+        Laracasts\Flash\FlashServiceProvider::class,
 
     ],
 
@@ -196,6 +197,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
+        'Flash'     => Laracasts\Flash\Flash::class,
 
     ],
 

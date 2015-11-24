@@ -2,6 +2,7 @@
 @section('body-class') class="hold-transition login-page" @stop
 
 @section('content')
+<?php flash()->success('Settings saved');?>
 <div class="login-box">
     <div class="login-logo">
         <a href="{{url('home')}}"><b>Admin</b>LTE</a>
