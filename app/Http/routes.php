@@ -15,12 +15,13 @@ Route::get('/', function () {
     return view('backend');
 });
 Route::get('/home', function () {
-    return view('backend');
+    return view('admin');
 });
 
 // The back-end area
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth','auth.admin']], function () {
     Route::get('/','AdminController@index');
+    Route::get('/home','AdminController@index');
     Route::get('/users','UsersController@index');
     Route::get('/users/edit/{id}','UsersController@edit');
     Route::get('/users/delete/{id}','UsersController@delete');

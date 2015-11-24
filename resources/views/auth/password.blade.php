@@ -1,50 +1,32 @@
 @extends('plain')
 
+@section('body-class') class="hold-transition login-page" @stop
+
 @section('content')
-
-<div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-            <div class="panel-heading">Login</div>
-            <div class="panel-body">
-                @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
-
-                <form class="form-horizontal" role="form" method="POST" action="/login">
-                    {!! csrf_field() !!}
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">E-Mail Address</label>
-                        <div class="col-md-6">
-                            <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Password</label>
-                        <div class="col-md-6">
-                            <input type="password" class="form-control" name="password">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-6 col-md-offset-4">
-                            <button type="submit" class="btn btn-primary">
-                                Login
-                            </button>
-                        </div>
-                    </div>
-                </form>
+<div class="login-box">
+    <div class="login-logo">
+        <a href="{{url('home')}}"><b>Admin</b>LTE</a>
+    </div><!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+        @include('partials/error')
+        <form action="{{url('password/email')}}" method="post">
+            {!! csrf_field() !!}
+            <div class="form-group has-feedback">
+                <input type="email" name="email" value="{{old('email')}}" class="form-control" placeholder="Email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
-        </div>
-    </div>
-</div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-2">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Send Password Reset Link</button>
+                </div><!-- /.col -->
+            </div>
+        </form>
+
+        <a href="{{url('login')}}">Login</a><br>
+        <a href="{{url('register')}}" class="text-center">Register a new membership</a>
+
+    </div><!-- /.login-box-body -->
+</div><!-- /.login-box -->
 
 @endsection

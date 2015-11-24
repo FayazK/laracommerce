@@ -1,25 +1,26 @@
-@extends('backend')
+@extends('admin')
 
 @section('content')
-
-<div class='panel panel-primary'>
-    <div class='panel-heading'>
-        <div class='panel-title'>
-            Manage Users
+<div class="box">
+    <div class="box-header with-border">
+        <h3 class="box-title">Manage Users</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
         </div>
     </div>
-    <table class='table table-bordered table-condensed table-striped table-hover'>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if(count($users))
+    <div class="box-body">
+        <table class='table table-bordered table-condensed table-striped table-hover'>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(count($users))
                 @foreach($users as $user)
                 <tr>
                     <td>{{$user->id}}</td>
@@ -34,18 +35,18 @@
                     </td>
                 </tr>
                 @endforeach
-            @endif
-        </tbody>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-    </table>
-</div>
-     
+                @endif
+            </tbody>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+    </div><!-- /.box-body -->
+</div><!-- /.box -->
 @stop
