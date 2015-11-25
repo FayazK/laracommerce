@@ -9,40 +9,14 @@
         </div>
     </div>
     <div class="box-body">
-        <table class='table table-bordered table-condensed table-striped table-hover'>
+        <table class='table table-bordered table-condensed table-striped table-hover' id='users-table'>
             <thead>
                 <tr>
                     <th>#</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if(count($users))
-                @foreach($users as $user)
-                <tr>
-                    <td>{{$user->id}}</td>
-                    <td>{{$user->first_name}} {{$user->last_name}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>{{$user->role}}</td>
-                    <td>
-                        <div class='btn-group btn-group-xs'>
-                            <a href="{{url('admin/users/edit/'.$user->id)}}" class='btn btn-primary'><i class='glyphicon glyphicon-edit'></i></a>
-                            <a href="{{url('admin/users/delete/'.$user->id)}}" class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></a>
-                        </div>
-                    </td>
-                </tr>
-                @endforeach
-                @endif
-            </tbody>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
+                    <th>Reg Date</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -50,3 +24,26 @@
     </div><!-- /.box-body -->
 </div><!-- /.box -->
 @stop
+@push('footer-scripts')
+<script>
+    jQuery(function($) {
+        $(function() {
+            $('#users-table').DataTable({
+                stateSave: true,
+                processing: true,
+                serverSide: true,
+                ajax: '{!! route('listusers') !!}',
+                columns: [
+                    {data: 'id', name: 'id'},
+                    {data: 'name', name: 'name'},
+                    {data: 'email', name: 'email'},
+                    {data: 'role', name: 'role'},
+                    {data: 'registered', name: 'registered'},
+                    {data: 'actions', name: 'registered'}
+                    
+                ]
+            });
+        });
+    });
+</script>
+@endpush

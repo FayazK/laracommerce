@@ -55,7 +55,7 @@
                                             <li>
                                                 <a href="#">
                                                     <div class="pull-left">
-                                                        <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                                        <img src="{{asset('assets/theme/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                                                     </div>
                                                     <h4>
                                                         Support Team
@@ -124,13 +124,13 @@
                             <!-- User Account: style can be found in dropdown.less -->
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                    <img src="{{asset('assets/theme/img/user2-160x160.jpg')}}user2-160x160.jpg" class="user-image" alt="User Image">
                                     <span class="hidden-xs">Alexander Pierce</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
-                                        <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                        <img src="{{asset('assets/theme/img/user2-160x160.jpg')}}user2-160x160.jpg" class="img-circle" alt="User Image">
                                         <p>
                                             Alexander Pierce - Web Developer
                                             <small>Member since Nov. 2012</small>
@@ -219,7 +219,7 @@
 
                 <!-- Main content -->
                 <section class="content">
-                    @include('flash::message')
+                    @include('vendor.flash.message')
                     @yield('content')
                 </section><!-- /.content -->
             </div><!-- /.content-wrapper -->
@@ -406,7 +406,7 @@
         <!-- FastClick -->
         <script src="{{asset('assets/plugins/fastclick/fastclick.min.js')}}"></script>
         <script src="{{asset('assets/theme/js/app.min.js')}}"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/s/bs/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.10,af-2.1.0,b-1.1.0,b-colvis-1.1.0,b-flash-1.1.0,b-html5-1.1.0,b-print-1.1.0,cr-1.3.0,fc-3.2.0,fh-3.1.0,kt-2.1.0,r-2.0.0,rr-1.1.0,sc-1.4.0,se-1.1.0/datatables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/s/bs/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.10,af-2.1.0,b-1.1.0,b-colvis-1.1.0,b-flash-1.1.0,b-html5-1.1.0,b-print-1.1.0,cr-1.3.0,fc-3.2.0,fh-3.1.0,kt-2.1.0,r-2.0.0,rr-1.1.0,sc-1.4.0,se-1.1.0/datatables.min.js"></script>
         @stack('footer-scripts')
     </body>
 </html>

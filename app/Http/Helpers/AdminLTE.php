@@ -44,7 +44,7 @@ function sidebarMenuChild($label, $url, $icon = null) {
         $active = true;
     }
     if (!is_null($icon)) {
-        $icon = '<i class="fa fa-' . $icon . '"><i>';
+        $icon = '<i class="fa fa-' . $icon . '"></i>';
     }
     $menu = [
         'url' => $url,

@@ -25,6 +25,9 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth'
     Route::post('settings/save','AdminController@save');
     Route::get('/settings/{type?}','AdminController@settings');
     Route::get('/users','UsersController@index');
+    Route::get('/users/add','UsersController@create');
+    Route::post('/users/add','UsersController@store');
+    Route::get('/users/list',['as' => 'listusers', 'uses' => 'UsersController@listusers']);
     Route::get('/users/edit/{id}','UsersController@edit');
     Route::get('/users/delete/{id}','UsersController@delete');
 });
