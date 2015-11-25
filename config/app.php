@@ -145,8 +145,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        'Zizaco\Entrust\EntrustServiceProvider',
+        Zizaco\Entrust\EntrustServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        yajra\Datatables\DatatablesServiceProvider::class,
 
     ],
 
@@ -198,6 +199,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
         'Flash'     => Laracasts\Flash\Flash::class,
+        'Datatables' => yajra\Datatables\Datatables::class,
 
     ],
 

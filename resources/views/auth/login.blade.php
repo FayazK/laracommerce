@@ -42,11 +42,11 @@
 
 @endsection
 
-@section('header')
+@push('header-scripts')
 <link rel="stylesheet" href="{{asset('assets/plugins/iCheck/square/blue.css')}}">
-@endsection
+@endpush
 
-@section('footer')
+@push('footer-scripts')
 <script src="{{asset('assets/plugins/iCheck/icheck.min.js')}}"></script>
     <script>
       $(function () {
@@ -57,4 +57,4 @@
         });
       });
     </script>
-@endsection
+@endpush

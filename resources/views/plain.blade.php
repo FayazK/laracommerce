@@ -17,7 +17,7 @@
 
         <link rel="stylesheet" href="{{asset('assets/theme/css/skins/skin-blue.min.css')}}">
 
-        @yield('header')
+        @stack('header-scripts')
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,6 +35,6 @@
         <!-- FastClick -->
         <script src="{{asset('assets/plugins/fastclick/fastclick.min.js')}}"></script>
         <script src="{{asset('assets/theme/js/app.min.js')}}"></script>
-        @yield('footer')
+        @stack('footer-scripts')
     </body>
 </html>

@@ -16,8 +16,9 @@
         <link rel="stylesheet" href="{{asset('assets/theme/css/AdminLTE.min.css')}}">
 
         <link rel="stylesheet" href="{{asset('assets/theme/css/skins/skin-blue.min.css')}}">
-
-        @yield('header')
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/bs/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.10,af-2.1.0,b-1.1.0,b-colvis-1.1.0,b-flash-1.1.0,b-html5-1.1.0,b-print-1.1.0,cr-1.3.0,fc-3.2.0,fh-3.1.0,kt-2.1.0,r-2.0.0,rr-1.1.0,sc-1.4.0,se-1.1.0/datatables.min.css"/>
+ 
+        @stack('header-scripts')
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -405,6 +406,7 @@
         <!-- FastClick -->
         <script src="{{asset('assets/plugins/fastclick/fastclick.min.js')}}"></script>
         <script src="{{asset('assets/theme/js/app.min.js')}}"></script>
-        @yield('footer')
+        <script type="text/javascript" src="https://cdn.datatables.net/s/bs/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.10,af-2.1.0,b-1.1.0,b-colvis-1.1.0,b-flash-1.1.0,b-html5-1.1.0,b-print-1.1.0,cr-1.3.0,fc-3.2.0,fh-3.1.0,kt-2.1.0,r-2.0.0,rr-1.1.0,sc-1.4.0,se-1.1.0/datatables.min.js"></script>
+        @stack('footer-scripts')
     </body>
 </html>
